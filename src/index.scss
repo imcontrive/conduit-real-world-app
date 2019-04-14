@@ -174,7 +174,7 @@ h6 {
 .nav {
 	display: flex;
 	justify-content: space-around;
-	padding: 10px;
+	// padding: 10px;
 	align-items: baseline;
 
 	.nav-logo {
@@ -350,9 +350,12 @@ h6 {
 	}
 }
 
-.nav {
-	 .navigation-link a {
-		text-decoration: none;
-		color: red;
-	}
+// Route Styles
+
+.navigation-link {
+	padding: 5px;
+}
+
+.active {
+	color: red;
 }
