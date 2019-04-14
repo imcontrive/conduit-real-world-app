@@ -13,7 +13,9 @@ class Home extends Component {
   
   render() {
     const {articles,filterTags} = this.props;
-    console.log(filterTags,"checking filter");
+    let a = (filterTags.length) ? filterTags : articles;
+    let heading =(filterTags.length) ? filterTags.tagList : "";
+
     return (
       <div>
         {/* Hero section */}
@@ -29,11 +31,11 @@ class Home extends Component {
           <div className="super">
             <article className="article-wrapper">
               {/* conditional rendering for tag required */}
-              <h2>Global Feed</h2>
+              <h2>{"Global Feed" || heading}</h2>
               <hr/>
 
               {
-                articles.map(article => (
+                a.map(article => (
 
               <div className="post">
 
@@ -64,14 +66,9 @@ class Home extends Component {
                 ))
               }
             </article>
-
-
           {/* Tag */}
             <Tags />
-          
           </div>
-
-
         </section>
       </div>
     )

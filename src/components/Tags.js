@@ -13,7 +13,7 @@ import {connect} from 'react-redux';
   handleTags = (tag) => {
     fetch(`https://conduit.productionready.io/api/articles?limit=10&offset=0&tag=${tag}`)
       .then(res => res.json())
-      .then(({articles}) => this.props.dispatch({type:"FILTER_BY_TAGS",payload:articles})
+      .then(({articles}) => this.props.dispatch({type:"FILTER_BY_TAGS",payload:articles,tag})
   )}
 
 

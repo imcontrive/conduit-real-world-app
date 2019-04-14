@@ -6,7 +6,7 @@ export default class User extends React.Component {
 			<>
 				<section className="user-section">
 					<div className="user-hero">
-						<img src="" alt="user-image" />
+						<img src="" alt="user" />
 						<p>Username</p>
 						<div className="follow-btn">
 							<button>+ Follow @Username</button>
@@ -24,7 +24,7 @@ export default class User extends React.Component {
 						<div className="post">
 							<div className="post-header">
 								<div className="post-details">
-									<img src="https://static.productionready.io/images/smiley-cyrus.jpg" alt="user-img" />
+									<img src="https://static.productionready.io/images/smiley-cyrus.jpg" alt="user" />
 									<div className="user-info">
 										<h4>author username</h4>
 										<p>createdAt</p>
