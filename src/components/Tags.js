@@ -26,7 +26,7 @@ import {connect} from 'react-redux';
             <div className="tags">
              {
                tags.map(tag => (
-                <p onClick= {()=> setTimeout(this.handleTags(tag), 5000)} >{tag}</p>
+                <p onClick= {()=> this.handleTags(tag)} >{tag}</p>
                ))
              }
             </div>

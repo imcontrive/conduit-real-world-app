@@ -5,7 +5,8 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 import Nav from './components/Nav';
-
+import User from './components/User';
+import Article from './components/Article';
 
 class App extends Component {
   componentDidMount() {
@@ -22,6 +23,10 @@ class App extends Component {
           <Route exact path='/' component={Home} />
           <Route exact path='/register' component={Signup} />
           <Route exact path='/login' component={Signin} />
+          <Route exact path='/user' component={User} />
+          <Route exact path='/article' component={Article} />
+
+
 
         </Switch>
 

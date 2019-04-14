@@ -217,14 +217,13 @@ h6 {
 	width: 100%;
 	margin: 0 auto;
 	display: flex;
-	// border: 0.5px solid red;
 	padding: 10px;
 
 
 	.article-wrapper {
 		max-width: 800px;
 		min-width:750px; 
-		// border: 0.4px solid;
+
 		h2 {
 			font-size: 20px;
 			font-weight: 500;
@@ -284,9 +283,7 @@ h6 {
 					}
 				}
 			}
-
 		}
-		
 	}
 
 	.tag-container {
@@ -359,3 +356,49 @@ h6 {
 .active {
 	color: red;
 }
+
+// User Styles
+
+.user-section {
+	text-align: center;
+	background-color: #f3f3f3;
+	padding: 25px;
+
+	.user-hero {
+		max-width: 600px;
+		margin: 0 auto;
+
+		img {
+			width: 100px;
+			height: 100px;
+			border-radius: 100px;
+			margin-bottom: 1rem;
+		}
+
+		.follow-btn {
+			text-align: end;
+			
+			button {
+				border: 0.5px solid rgb(131, 130, 130);
+				border-radius: 2px;
+				background-color: #f3f3f3;
+				color: #817c7c;
+				font-size: 10px;
+
+			}
+		}
+	}
+}
+// Styles overriding certain elements in User section
+.super-addn {
+	max-width: 600px;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+
+	.article-addn {
+		max-width: 600px;
+
+	}
+}
+

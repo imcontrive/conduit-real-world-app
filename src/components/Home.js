@@ -16,22 +16,6 @@ class Home extends Component {
     console.log(filterTags,"checking filter");
     return (
       <div>
-        {/* <header>
-          <nav className="nav">
-            <div className="nav-logo">
-              <h1>conduit</h1>
-            </div>
-            <div className="nav-links">
-              <ul>
-                <li>Home</li>
-                <li>Sign in</li>
-                <li>Sign up</li>
-              </ul>
-        
-            </div>
-          </nav>  
-        </header> */}
-
         {/* Hero section */}
         <section>
           <div className="hero">
@@ -39,6 +23,7 @@ class Home extends Component {
             <p>A place to share your knowledge.</p>
           </div>
         </section>
+        
         {/* Global Feed section */}
         <section>
           <div className="super">
