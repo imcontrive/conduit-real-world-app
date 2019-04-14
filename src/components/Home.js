@@ -11,8 +11,8 @@ class Home extends Component {
     )}
   
   render() {
-    const {articles} = this.props;
-    console.log(articles)
+    const {articles,filterTags} = this.props;
+    console.log(filterTags,"checking filter");
     return (
       <div>
         <header>
@@ -44,6 +44,7 @@ class Home extends Component {
             <article className="article-wrapper">
               {/* conditional rendering for tag required */}
               <h2>Global Feed</h2>
+              <hr/>
 
               {
                 articles.map(article => (
@@ -94,6 +95,7 @@ class Home extends Component {
 function mapStateToProps(state) {
   return {
     articles: state.reducer,
+    filterTags: state.filterTags
   }
 }
 

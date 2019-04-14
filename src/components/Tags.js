@@ -8,6 +8,15 @@ import {connect} from 'react-redux';
     .then(res => res.json())
     .then(({tags}) => this.props.dispatch({type:"ADD_TAGS",payload:tags})
     )}
+
+  // handleTags for filtering articles by tags
+  handleTags = (tag) => {
+    fetch(`https://conduit.productionready.io/api/articles?limit=10&offset=0&tag=${tag}`)
+      .then(res => res.json())
+      .then(({articles}) => this.props.dispatch({type:"FILTER_BY_TAGS",payload:articles})
+  )}
+
+
   render() {
     const {tags} = this.props;
     return (
@@ -17,11 +26,10 @@ import {connect} from 'react-redux';
             <div className="tags">
              {
                tags.map(tag => (
-                <p>{tag}</p>
+                <p onClick= {()=> setTimeout(this.handleTags(tag), 5000)} >{tag}</p>
                ))
              }
             </div>
-            
           </div>
         </section>
     )
