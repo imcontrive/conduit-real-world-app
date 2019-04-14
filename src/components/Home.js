@@ -1,7 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import Tags from './Tags';
 
-export default class Home extends Component {
+class Home extends Component {
+
+  componentDidMount() {
+    fetch('https://conduit.productionready.io/api/tags')
+    .then(res => res.json())
+    .then(({tags}) => this.props.dispatch({type:"ADD_TAGS",payload:tags})
+    )}
+  
   render() {
+    const {articles} = this.props;
+    console.log(articles)
     return (
       <div>
         <header>
@@ -33,42 +44,44 @@ export default class Home extends Component {
             <article className="article-wrapper">
               {/* conditional rendering for tag required */}
               <h2>Global Feed</h2>
+
+              {
+                articles.map(article => (
+
               <div className="post">
 
                 <div className="post-header">
                   <div className="post-details">
-                    <img src="https://static.productionready.io/images/smiley-cyrus.jpg" />
+                    <img src="https://static.productionready.io/images/smiley-cyrus.jpg" alt="user-img" />
                     <div className="user-info">
-                      <h4>@UserName</h4>
-                      <p>post date</p>
+                      <h4>{article.author.username}</h4>
+                      <p>{article.createdAt}</p>
                     </div>
                   </div>
                   {/* Heart */}
                   <div className="likes">
                     <p className="heart">&#9829;</p>
-                    <p>0</p>
+                    <p>{article.favoritesCount}</p>
                   </div>
                 </div>
                 
                 {/* Post content */}
                 <div className="post-content">
-                  <p>Article Name</p>
-                  <p>Article description</p>
-                  <button>Read More</button>
+                  <p>{article.title}</p>
+                  <p>{article.description}</p>
+                  <button type="submit">Read More</button>
 
                 </div>
               </div>
+
+                ))
+              }
             </article>
 
 
           {/* Tag */}
-
-          <section>
-            <div className="tag">
-              <h4>Popular Tags</h4>
-              
-            </div>
-          </section>
+            <Tags />
+          
           </div>
 
 
@@ -77,3 +90,11 @@ export default class Home extends Component {
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    articles: state.reducer,
+  }
+}
+
+export default connect(mapStateToProps)(Home);

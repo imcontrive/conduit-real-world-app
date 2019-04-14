@@ -228,6 +228,8 @@ h6 {
 
 		.post {
 			width: 100%;
+			border-bottom: 0.5px solid lightgray;
+			padding-bottom: 10px;
 
 			.post-header {
 				display: flex;
@@ -274,7 +276,20 @@ h6 {
 		
 	}
 
-	// .tag {
+	.tag-container {
+		background: #f3f3f3;
 		
-	// }
+		
+		.tags {
+	
+			p {
+				display: inline-block;
+				padding: 5px;
+				color: #fff;
+				background: #687077;
+				border-radius: 12px;
+				margin: 5px;
+			}
+		}
+	}
 }

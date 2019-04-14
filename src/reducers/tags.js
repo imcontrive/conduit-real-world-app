@@ -1,11 +1,8 @@
-export default function reducer(state=[],action){
+export default function tags(state=[],action){
   switch(action.type) {
-    case "ADD_ARTICLES": 
+    case "ADD_TAGS": 
       return action.payload
     default:
       return state;
   }
 }
-
-
-// expo
