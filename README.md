@@ -1,3 +1,110 @@
+### Article List
+
+**Note: Returns most recent articles globally by default**
+https://conduit.productionready.io/api/articles
+
+
+
+Limit number of articles (default is 20) (max 100 at a time): ?limit=20
+https://conduit.productionready.io/api/articles?limit=30
+
+
+
+Offset/skip number of articles (default is 0): ?offset=0
+https://conduit.productionready.io/api/articles?limit=20&offset=20
+
+
+
+Filter by tag : ?tag=AngularJS
+https://conduit.productionready.io/api/articles?limit=20&offset=20&tag=AngularJS
+
+
+Filter by author : ?author=jake
+https://conduit.productionready.io/api/articles?limit=20&offset=20&author=jake
+
+
+Favorited by user : ?favorited=jake
+https://conduit.productionready.io/api/articles?limit=20&offset=20&favorited=jake
+
+
+### Get Tags
+https://conduit.productionready.io/api/tags
+
+
+
+
+### Get Article
+https://conduit.productionready.io/api/:slug
+
+
+eg : https://conduit.productionready.io/api/ttt-8821yw
+
+response : 
+{
+    article: {
+        title: "ttt",
+        slug: "ttt-8821yw",
+        body: "ttt",
+        createdAt: "2019-01-16T09:14:21.293Z",
+        updatedAt: "2019-01-16T09:14:21.293Z",
+        tagList: [ ],
+        description: "tt",
+        author: {
+        username: "lalit1138",
+        bio: "test",
+        image: "https://pbs.twimg.com/profile_images/378800000053604656/2597c0dede325c2f90742dcbe300e5d5_bigger.jpeg",
+        following: false
+        },
+        favorited: false,
+        favoritesCount: 1
+    }
+}
+
+
+### Profile
+
+https://conduit.productionready.io/api/profiles/username
+
+eg: https://conduit.productionready.io/api/profiles/lalit1138
+
+response :
+
+{
+    profile: {
+        username: "lalit1138",
+        bio: "test",
+        image: "https://pbs.twimg.com/profile_images/378800000053604656/2597c0dede325c2f90742dcbe300e5d5_bigger.jpeg",
+        following: false
+    }
+}
+
+
+### Comments
+
+https://conduit.productionready.io/api/:slug/comments
+
+eg : https://conduit.productionready.io/api/articles/fizzbuzz-ee5euh/comments
+
+response : 
+
+{
+    comments: [
+        {
+            id: 34777,
+            createdAt: "2019-01-30T02:27:10.728Z",
+            updatedAt: "2019-01-30T02:27:10.728Z",
+            body: "not the best solution",
+            author: {
+            username: "xenogears2018",
+            bio: null,
+            image: "https://static.productionready.io/images/smiley-cyrus.jpg",
+            following: false
+            }
+        }
+    ]
+}
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
