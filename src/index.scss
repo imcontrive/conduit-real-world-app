@@ -196,3 +196,85 @@ h6 {
 		}
 	}
 }
+
+.hero {
+	text-align: center;
+	background-color: #5CB85C;
+	color: #fff;
+	padding: 25px;
+	margin-bottom: 10px;
+
+	h2 {
+		font-size: 35px;
+		font-weight: bold;
+	}
+}
+
+// Global Feed section
+
+.super {
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	border: 0.5px solid red;
+	padding: 10px;
+
+
+	.article-wrapper {
+		max-width: 800px;
+		min-width:750px; 
+		border: 0.4px solid;
+
+		.post {
+			width: 100%;
+
+			.post-header {
+				display: flex;
+				justify-content: space-between;
+				padding: 10px;
+
+				.likes {
+					display: flex;
+					border: 0.5px solid #5CB85C;
+
+					.heart {
+						color: #5CB85C;
+					}
+				}
+			}
+
+			.post-details {
+				display: flex;
+				justify-content: flex-start;
+				align-content: baseline;
+				
+
+				img {
+					width: 26px;
+					height: 26px;
+					border-radius: 50%;
+				}
+
+				.user-info {
+					padding-left: 5px;
+					
+					h4 {
+						font-size: 12px;
+					}
+
+					p {
+						font-size: 8px;
+
+					}
+				}
+			}
+
+		}
+		
+	}
+
+	// .tag {
+		
+	// }
+}
