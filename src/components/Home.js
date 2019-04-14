@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Tags from './Tags';
+import Nav from './Nav';
 
 class Home extends Component {
 
@@ -15,7 +16,7 @@ class Home extends Component {
     console.log(articles)
     return (
       <div>
-        <header>
+        {/* <header>
           <nav className="nav">
             <div className="nav-logo">
               <h1>conduit</h1>
@@ -29,7 +30,7 @@ class Home extends Component {
         
             </div>
           </nav>  
-        </header>
+        </header> */}
 
         {/* Hero section */}
         <section>

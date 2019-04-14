@@ -69,7 +69,7 @@ body {
 }
 a {
 	text-decoration: none;
-	color: #fff;
+	color: black;
 }
 button {
 	border: 0;
@@ -291,5 +291,56 @@ h6 {
 				margin: 5px;
 			}
 		}
+	}
+}
+
+
+// Signup Styles
+
+.signup-container {
+	width: 300px;
+	margin: 0 auto;
+	text-align: center;
+
+	h2 {
+		font-size: 26px;
+		font-weight: normal;
+	}
+	p {
+		font-size: 14px;
+		color: #5CB85C;
+	}
+	.form-control {
+		display: block;
+		width: 100%;
+		padding: 0.5rem 0.75rem;
+		font-size: 1rem;
+		line-height: 1.25;
+		color: #55595c;
+		background-color: #fff;
+		background-image: none;
+		background-clip: padding-box;
+		border: 1px solid rgba(0, 0, 0, 0.15);
+		border-radius: 2px;
+		margin: 7px;
+	}
+	.form-control::placeholder  {
+		color: #9e9fa0;
+	}
+	.submit-btn {
+		color: #fff;
+		background-color: #5CB85C;
+		border-color: #5CB85C;
+		padding: 10px;
+		border-radius: 4px;
+		line-height: 1.1;
+		
+	}
+}
+
+.nav {
+	 .navigation-link a {
+		text-decoration: none;
+		color: red;
 	}
 }

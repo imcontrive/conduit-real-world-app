@@ -1,6 +1,11 @@
 import React, { Component } from 'react'; 
 import {connect} from 'react-redux';
 import Home from './components/Home';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Signin from './components/Signin';
+import Signup from './components/Signup';
+import Nav from './components/Nav';
+
 
 class App extends Component {
   componentDidMount() {
@@ -11,7 +16,16 @@ class App extends Component {
 
   render() {
     return (
-      <Home/>
+      <Router>
+        <Nav />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/register' component={Signup} />
+          <Route exact path='/login' component={Signin} />
+
+        </Switch>
+
+      </Router>
     )
   }
 }
