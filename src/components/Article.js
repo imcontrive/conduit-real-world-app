@@ -44,7 +44,7 @@ export default class Article extends React.Component {
 							<p>Sign in</p>
 						</NavLink>
 						or
-						<NavLink exact className="navigation-link nav-logo" to='/' >
+						<NavLink exact className="navigation-link nav-logo" to='/register' >
 							<p>sign up</p>
 						</NavLink>
 						<p className="add-comments">to add comments to this article.</p>

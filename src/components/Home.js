@@ -32,7 +32,6 @@ class Home extends Component {
             <article className="article-wrapper">
               {/* conditional rendering for tag required */}
               <h2>{"Global Feed" || heading}</h2>
-              <hr/>
 
               {
                 a.map(article => (
@@ -50,15 +49,15 @@ class Home extends Component {
                   {/* Heart */}
                   <div className="likes">
                     <p className="heart">&#9829;</p>
-                    <p>{article.favoritesCount}</p>
+                    <p className="article-count">{article.favoritesCount}</p>
                   </div>
                 </div>
                 
                 {/* Post content */}
                 <div className="post-content">
-                  <p>{article.title}</p>
-                  <p>{article.description}</p>
-                  <button type="submit">Read More</button>
+                  <p className="post-title">{article.title}</p>
+                  <p className="post-description">{article.description}</p>
+                  <button type="submit">Read more...</button>
 
                 </div>
               </div>
