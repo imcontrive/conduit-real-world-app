@@ -19,11 +19,11 @@ export default function Nav() {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink exact activeClassName = 'active' className="navigation-link" to='/register' >
-							Signup
-						</NavLink>
 						<NavLink exact activeClassName = 'active' className="navigation-link" to='/login' >
 							Signin
+						</NavLink>
+						<NavLink exact activeClassName = 'active' className="navigation-link" to='/register' >
+							Signup
 						</NavLink>
 					</li>
 				</ul>

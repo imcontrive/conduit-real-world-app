@@ -189,10 +189,16 @@ h6 {
 	ul {
 		display: flex;
 		justify-content: space-around;
+		
 
 		li {
-			margin: 5px;
-			font-size: 10px; 
+			margin: 1px;
+			font-size: 10px;
+
+			.navigation-link {
+				color: rgba(0, 0, 0, 0.3);
+			}
+			
 		}
 	}
 }
@@ -235,7 +241,7 @@ h6 {
 		width: 700px;
 
 		h2 {
-			font-size: 20px;
+			font-size: 12px;
 			font-weight: 500;
 			color: #5CB85C;
 			border-bottom: 0.5px solid lightgray;
@@ -423,7 +429,7 @@ h6 {
 }
 
 .active {
-	color: red;
+	color: black;
 }
 
 // User Styles

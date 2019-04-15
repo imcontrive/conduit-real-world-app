@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Tags from './Tags';
 import Nav from './Nav';
+import {NavLink} from 'react-router-dom';
 
 class Home extends Component {
 
@@ -42,7 +43,10 @@ class Home extends Component {
                   <div className="post-details">
                     <img src="https://static.productionready.io/images/smiley-cyrus.jpg" alt="user-img" />
                     <div className="user-info">
-                      <h4>{article.author.username}</h4>
+                      <NavLink exact activeClassName = 'active' className="navigation-link" to='/user' >
+                        <h4>{article.author.username}</h4>
+                      </NavLink>
+                      
                       <p>{article.createdAt}</p>
                     </div>
                   </div>
@@ -55,7 +59,10 @@ class Home extends Component {
                 
                 {/* Post content */}
                 <div className="post-content">
-                  <p className="post-title">{article.title}</p>
+                  <NavLink exact activeClassName = 'active' className="navigation-link" to='/article' >
+                    <p className="post-title">{article.title}</p>
+                  </NavLink>
+                  
                   <p className="post-description">{article.description}</p>
                   <button type="submit">Read more...</button>
 
