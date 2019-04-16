@@ -171,6 +171,8 @@ h6 {
 
 // Conduit Styles begin here
 
+// Navigation Menu
+
 .nav {
 	display: flex;
 	justify-content: space-around;
@@ -178,11 +180,13 @@ h6 {
 	align-items: baseline;
 
 	.nav-logo {
+		padding: 5px;
 		color: #5CB85C;
 		font-family: "Titillium Web", sans-serif;
 		
-		h1 {
-			font-size: 16px; 
+		h5 {
+			font-size: 14px;
+			font-weight: bold;
 		}
 	}
 
@@ -193,35 +197,38 @@ h6 {
 
 		li {
 			margin: 1px;
-			font-size: 10px;
+			font-size: 8px;
+			color: rgba(0, 0, 0, 0.3);
 
-			.navigation-link {
-				color: rgba(0, 0, 0, 0.3);
-			}
+			// .navigation-link {
+			// 	color: rgba(0, 0, 0, 0.3);
+			// }
 			
 		}
 	}
 }
 
+// Hero Section
+
 .hero {
 	text-align: center;
 	background-color: #5CB85C;
 	color: #fff;
-	padding: 10px;
+	padding: 14px;
 	margin-bottom: 10px;
 	font-family:"Titillium Web", sans-serif;
 	box-shadow: inset 0 8px 8px -8px rgba(0, 0, 0, 0.3), inset 0 -8px 8px -8px rgba(0, 0, 0, 0.3);
 
 	h2 {
-		font-size: 30px;
+		font-size: 26px;
 		font-weight: bold;
 		text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
 	}
 
 	p {
-		 color: #fff;
+		 color: rgb(226, 226, 226);
 		 font-weight: normal;
-		 font-size: 16px;
+		 font-size: 14px;
 		 font-family:"Source Sans Pro", sans-serif;
 		 
 	}
@@ -245,8 +252,6 @@ h6 {
 			font-weight: 500;
 			color: #5CB85C;
 			border-bottom: 0.5px solid lightgray;
-			
-		
 		}
 
 		.post {
@@ -303,8 +308,8 @@ h6 {
 				display: flex;
 				justify-content: flex-start;
 				align-content: baseline;
+				position: relative;
 				
-
 				img {
 					width: 26px;
 					height: 26px;
@@ -312,15 +317,19 @@ h6 {
 				}
 
 				.user-info {
+					width: 100px;
 					padding-left: 5px;
+					position: absolute;
+					left: 26px;
+					top: -7px;
 					
 					h4 {
-						font-size: 12px;
+						font-size: 10px;
 						color: #5CB85C;
 					}
 
 					p {
-						font-size: 8px;
+						font-size: 6px;
 
 					}
 				}
@@ -329,6 +338,7 @@ h6 {
 	}
 
 	.post-content {
+		margin-top: 30px;
 
 		.post-title {
 			font-size: 14px;
@@ -390,10 +400,12 @@ h6 {
 		font-size: 26px;
 		font-weight: normal;
 	}
+
 	p {
 		font-size: 14px;
 		color: #5CB85C;
 	}
+
 	.form-control {
 		display: block;
 		width: 100%;
@@ -408,9 +420,11 @@ h6 {
 		border-radius: 2px;
 		margin: 7px;
 	}
+
 	.form-control::placeholder  {
 		color: #9e9fa0;
 	}
+
 	.submit-btn {
 		color: #fff;
 		background-color: #5CB85C;
@@ -418,14 +432,14 @@ h6 {
 		padding: 10px;
 		border-radius: 4px;
 		line-height: 1.1;
-		
 	}
 }
 
 // Route Styles
 
 .navigation-link {
-	padding: 5px;
+	padding: 0 5px 0 0;
+	display: inline-block;
 }
 
 .active {
@@ -437,17 +451,16 @@ h6 {
 .user-section {
 	text-align: center;
 	background-color: #f3f3f3;
-	padding: 25px;
+	padding: 16px;
 
 	.user-hero {
 		max-width: 600px;
 		margin: 0 auto;
 
 		img {
-			width: 100px;
-			height: 100px;
+			width: 50px;
+			height: 50px;
 			border-radius: 100px;
-			margin-bottom: 1rem;
 		}
 
 		.follow-btn {
@@ -464,6 +477,7 @@ h6 {
 		}
 	}
 }
+
 // Styles overriding certain elements in User section
 .super-addn {
 	max-width: 600px;
@@ -473,7 +487,6 @@ h6 {
 
 	.article-addn {
 		max-width: 600px;
-
 	}
 }
 
@@ -481,7 +494,6 @@ h6 {
 
 .article-comp-container {
 	background-color: #373a3c;
-	
 }
 
 .article-section {
@@ -544,13 +556,6 @@ h6 {
 		}
 	}
 }
-
-// .article-comments-section {
-// 	max-width: 700px;
-// 	margin: 0 auto;
-// 	padding: 25px;
-// 	color: #fff;
-// }
 
 .mid-section {
 	color: black;

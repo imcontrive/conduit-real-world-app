@@ -1,15 +1,20 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-export default class User extends React.Component {
+class User extends React.Component {
 	render() {
+		const {profiles} = this.props;
+		// console.log(profiles, 'this');
+		
 		return (
 			<>
 				<section className="user-section">
 					<div className="user-hero">
-						<img src="" alt="user" />
-						<p>Username</p>
+						<img src={profiles.image} alt="user" />
+						<p>{profiles.username}</p>
+						<p>{profiles.bio}</p>
 						<div className="follow-btn">
-							<button>+ Follow @Username</button>
+							<button>+ Follow {profiles.username}</button>
 						</div>
 					</div>
 
@@ -18,7 +23,7 @@ export default class User extends React.Component {
 				{/* User Articles section */}
 				<div className="super super-addn">
 					<article className="article-wrapper article-addn">
-						<h2>Global Feed</h2>
+						<h2>My Articles</h2>
 						<hr/>
 
 						<div className="post">
@@ -52,3 +57,12 @@ export default class User extends React.Component {
 		)
 	}
 }
+
+function mapStateToProps(state) {
+	console.log(state);
+	return {
+		profiles: state.userProfile,
+	}
+}
+
+export default connect(mapStateToProps)(User)
