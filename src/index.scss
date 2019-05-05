@@ -581,3 +581,20 @@ h6 {
 .article-mid {
 	// justify-content: center;
 }
+
+
+// Pages Component Styles
+
+.pages-section {
+
+	.page-buttons {
+
+		button {
+			padding: 4px 6px;
+			font-size: 10px;
+			background-color: #5CB85C;
+			border: 0.5px solid #5CB85C;
+			color: #fff;
+		}
+	}
+}

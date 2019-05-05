@@ -7,12 +7,13 @@ import Signup from './components/Signup';
 import Nav from './components/Nav';
 import User from './components/User';
 import Article from './components/Article';
+// import Pages from './Pages';
 
 class App extends Component {
   componentDidMount() {
     fetch('https://conduit.productionready.io/api/articles?limit=10&offset=0')
     .then(res => res.json())
-    .then(({articles}) => this.props.dispatch({type:"ADD_ARTICLES",payload:articles})
+    .then((data) => this.props.dispatch({type:"ADD_ARTICLES",payload: data})
     )}
 
   render() {

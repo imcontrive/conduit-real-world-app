@@ -3,8 +3,10 @@ import {connect} from 'react-redux';
 
 class User extends React.Component {
 	render() {
-		const {profiles} = this.props;
-		// console.log(profiles, 'this');
+		const {profiles, userArticles} = this.props;
+		console.log(profiles, 'this is profiles prop');
+		// console.log(userArticles, 'this is userArticles prop');
+
 		
 		return (
 			<>
@@ -25,13 +27,13 @@ class User extends React.Component {
 					<article className="article-wrapper article-addn">
 						<h2>My Articles</h2>
 						<hr/>
-
+						{/* {(profiles) ? profiles.map(profile => */}
 						<div className="post">
 							<div className="post-header">
 								<div className="post-details">
 									<img src="https://static.productionready.io/images/smiley-cyrus.jpg" alt="user" />
 									<div className="user-info">
-										<h4>author username</h4>
+										<h4>username</h4>
 										<p>createdAt</p>
 									</div>
 								</div>
@@ -50,6 +52,7 @@ class User extends React.Component {
 
 							</div>
 						</div>
+						{/* ) : []} */}
 					</article>
 				</div>
 			</>
@@ -59,9 +62,10 @@ class User extends React.Component {
 }
 
 function mapStateToProps(state) {
-	console.log(state);
+	// console.log(state, 'this is state in USER');
 	return {
-		profiles: state.userProfile,
+		profiles: state,
+		userArticles: state,
 	}
 }
 

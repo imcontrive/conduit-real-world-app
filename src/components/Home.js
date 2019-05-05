@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Tags from './Tags';
 import {NavLink} from 'react-router-dom';
+import Pages from './Pages';
 
 class Home extends Component {
 
@@ -12,21 +13,23 @@ class Home extends Component {
     )}
 
   handleUser = (username) => {
+    this.fetchUserArticles(username);
     fetch(`https://conduit.productionready.io/api/profiles/${username}`)
     .then(res => res.json()).then(user => this.props.dispatch({type: "USER_PROFILE", payload: user.profile})
     )}
   
+  fetchUserArticles = (username) => {
+    fetch(`https://conduit.productionready.io/api/articles?author=${username}`)
+    .then(res => res.json())
+    .then(({articles}) => this.props.dispatch({type: "USER_ARTICLES", payload: articles}))
+  }
+  
+  
   render() {
-    const {articles,filterTags} = this.props;
+    const {articles, filterTags} = this.props;
     let arr = (filterTags.length) ? filterTags : articles;
     let heading =(filterTags.length) ? filterTags.tagList : "";
-    console.log(filterTags);
-
-    // const date = "2019-04-15T10:51:42.719Z";
-    // function getDate(date) {
-    //   const newDate = date.toString().slice(4, 15);
-    //       return new Date(newDate);
-    //   }
+    console.log(arr, 'this is arr');
 
     return (
       <div>
@@ -63,8 +66,10 @@ class Home extends Component {
 
                   {/* Heart */}
                   <div className="likes">
-                    <p className="heart">&#9829;</p>
-                    <p className="article-count">{article.favoritesCount}</p>
+                    <NavLink exact className="navigation-link nav-logo" to='/register' >
+                      <p className="heart">&#9829;</p>
+                      <p className="article-count">{article.favoritesCount}</p>
+                    </NavLink>
                   </div>
                 </div>
                 
@@ -80,12 +85,13 @@ class Home extends Component {
                 </div>
               </div>
 
-                ))
+              ))
               }
             </article>
           {/* Tag */}
             <Tags />
           </div>
+          <Pages />
         </section>
       </div>
     )
@@ -94,7 +100,7 @@ class Home extends Component {
 
 function mapStateToProps(state) {
   return {
-    articles: state.reducer,
+    articles: state.reducer.articles,
     filterTags: state.filterTags
   }
 }
